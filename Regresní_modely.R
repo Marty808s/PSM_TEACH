@@ -213,13 +213,49 @@ data(mtcars)
 # Jsou splneny predpoklady?
 # Spoctete predpoved ...
 
-
 #----------------------------------------------------------
 
 #### Logisticka regrese
+library(datarium)
+library(car)
 
+smpl<-sample(1:2201,150)
+titanic<-titanic.raw[smpl,]
+titanic
 
+dependent <- titanic$Survived=="Yes"
+dependent
 
+# Náhled nad daty
+table(titanic$Survived,titanic$Class)
+table(titanic$Survived,titanic$Age)
+table(titanic$Survived,titanic$Sex)
+
+# Závislost přeživších na jejich věkové skupině, třídě v lodi a pohlaví
+m1 <- glm(dependent~titanic$Class+titanic$Age+titanic$Sex, family="binomial")
+summary(m1)
+
+library(fmsb)
+
+# Vypočet R2
+NagelkerkeR2(m1)
+
+Anova(m1)
+
+b <- coef(m1)
+b
+
+1/exp(b[3])
+# kolikrat se zvysuji sance na preziti u cestujicich v prvni tride oproti cestujicim ve treti tride
+1/exp(b[4])
+# kolikrat se zvysuji sance na preziti u cestujicich v prvni tride oproti posadce
+exp(b[5])
+# kolikrat se zvysuji sance na preziti u zen oproti muzum
+
+# Jake sance na preziti ma dospely muz cestujici druhou tridou?
+(odd<-exp(b[1]+b[2]+b[6]))
+# A jakou ma pravdepodobnost, ze prezije
+(prob<-odd/(1+odd))
 
 #----------------------------------------------------------
 #TO:DO
