@@ -52,7 +52,6 @@ summary.aov(m)
 #---------------------------------------------------------------------------------
 
 # Metoda hlavních komponent
-
 vyska <- data$por.delka
 hmot <- data$por.hmotnost
 trvani <- data$trvani
@@ -60,7 +59,6 @@ vysM <- data$vyskaM
 vysO <- data$vyskaO
 
 # Počet hlavních komponent
-
 df <- cbind(vyska,hmot,trvani,vysM,vysO)
 df
 
@@ -72,5 +70,81 @@ screeplot(princomp(df),type="l")
 abline(h=1,col="green")
 
 cumsum(eigen(cor(df))$values/sum(eigen(cor(df))$values))
+
+
+# Faktorová analýza
+#==> vemu počet hl. komponent a podle nic vytvořím počet faktorů)
+factanal(df, factor=2)
+
+#---------------------------------------------------------------------------------
+
+# Diskriminační analýza
+library(MASS)
+
+data <- Ichs
+kour <- data[,8]
+
+df <- data[,1:6]
+df <- cbind(df,kour)
+
+len <- length(df[,1])
+
+train <- sample(1:len,0.5*len)
+train 
+
+model <- lda(df$kour ~ ., df, prior=c(1,1,1,1)/4, subset=train)
+
+model
+
+pred <- predict(model,df[-train,])
+
+table(df[-train,]$kour,pred$class)
+
+df_vystup <- cbind(df, pred$class)
+
+plot(pred$x[,1],pred$x[,2], pch=19, col=pred$class)
+
+#---------------------------------------------------------------------------------
+
+# Shlukování
+#1. Hierarchické
+data <- USArrests
+data
+
+prcomp(data)
+
+hc <- hclust(dist(data), "ave")
+plot(hc, hang=-1)
+rect.hclust(hc, k=3, border="red")
+
+cut <- cutree(hc,3)
+
+plot(data$Assault, data$UrbanPop, col=cut, pch=19)
+plot(data$Assault, data$Murder, col=cut, pch=19)
+
+
+# Porovnání po škálování dat
+data.sc <- scale(data)
+
+hc.sc <- hclust(dist(data.sc))
+plot(hc.sc,hang=-1)
+rect.hclust(hc.sc,k=3, border="green")
+cut.sc <- cutree(hc.sc,3)
+
+table(cut,cut.sc)
+
+# Vykreslení hlaních komponent
+pc <-prcomp(data.sc)
+pc
+
+plot(pc)
+abline(h=1)
+
+
+# KMeans
+require(graphics)
+seq.km <- kmeans(data.sc,3)
+table(cut.sc,seq.km$cluster)
+cumsum(eigen(cor(data.sc))$values/sum(eigen(cor(data.sc))$values))
 
 #---------------------------------------------------------------------------------
