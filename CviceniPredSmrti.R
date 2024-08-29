@@ -23,7 +23,7 @@ bartlett.test(pocet_deti~vzdelani)
 
 #H0: rozptyly pocet deti u jednotlivých vzdelani nelisi | H1: lisi
 kruskal.test(pocet_deti~vzdelani)
-#==> p-value = 0.3357 > alffa => nezamítám H0
+#==> p-value = 0.3357 > alfa => nezamítám H0
 
 boxplot(pocet_deti~vzdelani)
 table(pocet_deti,vzdelani)
