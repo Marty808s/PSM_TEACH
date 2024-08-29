@@ -245,6 +245,7 @@ Anova(m1)
 b <- coef(m1)
 b
 
+
 1/exp(b[3])
 # kolikrat se zvysuji sance na preziti u cestujicich v prvni tride oproti cestujicim ve treti tride
 1/exp(b[4])
