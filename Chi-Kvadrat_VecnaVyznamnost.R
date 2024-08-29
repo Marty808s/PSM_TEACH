@@ -39,6 +39,7 @@ chisq.test(cyl,trans)$ex
 #   test - Fisheruv
 
 #Fisheruv test
+# H0: nesouvisí | H1: souvisí
 # => faktoriálový test -> vytvoří tabulku s pst pro jednotlivé varianty
 fisher.test(cyl,trans)
 # =- p-value = 0.009105 < alfa - zamítám H0
