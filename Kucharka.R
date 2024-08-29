@@ -9,25 +9,26 @@
 #   2. nemají -> wilcox.test()
 
 
-# Když zkoukám zda může být: liší se průměrná hodnota ve dvou NEzávislých skupinách (CISLO X CISLO):
-# 1. TEST NORMALITY DAT:   
-#   mají normální rozdělení -> t.test -> jdu kouknout na rozptyly
-#   nemají -> wilcox.test() -> kouknu na rozptyly, ale nemám jinou volbu (podmínkou jsou..)
-# 2. TEST SHODOSTI ROZPTYLŮ
-#   jsou shodne -> t.test
-#   nejsou shodne -> welchuv test
+# Když zkoukám zda může být: liší se hodnota rozdílu ve dvou NEzávislých skupinách (CISLO X CISLO):
+# TEST NORMALITY DAT: 
+#   1. mají normální rozdělení -> TEST SHODY ROZPTYLU -> Mají shodné rozptyly - ttest
+#   2.                                                -> nemají - Welchův test
+#   3. nemají normální rozdělení -> dvouvýběrový Wilcoxonův test 
 
 
-# Když zkoukám zda může být: liší se průměrná hodnota ve dvou ZÁvislých skupinách (CISLO X CISLO):
+# Když zkoukám zda může být: liší se hodnota rozdílu ve dvou ZÁvislých skupinách (CISLO X CISLO):
 # 1. TEST NORMALITY DAT:   
-#   mají normální rozdělení -> párový t.test -> jdu kouknout na rozptyly
+#   mají normální rozdělení -> párový t.test
 #   nemají -> wilcox.test()
 
 
-# Když zkoukám zda může být: průměrná hodnota ve dvou nezávislých skupinách:
-# TEST NORMALITY RESIDUI LIN. MODELU: 
-#   1. mají normální rozdělení -> ANOVA var.equal = TRUE - default....
-#   2. nemají -> ANOVA var.equal = FALSE
-# TEST SHODY ROZPTYLU:
-#   1. maji shodny rozptyl ->
-#   2. nemaji shodny rozptyl -> KRUSKAL ANOVA
+# Když zkoukám zda může být: průměrná hodnota více závislých skupinách:
+# 1. TEST NORMALITY DAT:   
+#   mají normální rozdělení -> ANOVA
+#   nemají -> Friedman
+
+# Když zkoukám zda může být: průměrná hodnota více nezávislých skupinách:
+# 1. TEST NORMALITY DAT:   
+#   1. mají normální rozdělení -> TEST SHODY ROZPTYLU -> Mají shodné rozptyly - ANOVA pro shodné rozptyly
+#   2.                                                -> nemají - ANOVA pro různé rozptyly
+#   3. nemají normální rozdělení -> Kruskal-Wallis
