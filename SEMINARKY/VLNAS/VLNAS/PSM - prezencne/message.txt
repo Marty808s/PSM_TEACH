@@ -1,0 +1,20 @@
+Dobrý den,
+
+
+Druhý úkol.
+V obou příkladech máte nejprve najít optimální model. To je takový model, který vysvětluje co možná nejvíce variability závisle proměnné, ale zároveň není příliš složitý, tedy neobsahuje nevýznamné proměnné. Máme několik kritérií, 
+na jejichž základě můžete tento optimální model určit. Buď můžete využít některého informačního kritéria (brali jsme 2: Akaikeho - AIC, a Bayesovské - BIC), nebo můžete vybírat proměnné podle jejich p-hodnot. Podle p-hodnot se postupuje tak,
+ že se proměnné postupně po jedné do modelu přidávají nebo vynechávají a hledá se takový model, který bude obsahovat pouze proměnné s p-hodnotou menší než 0.05, a bude obsahovat všechny takové proměnné. Nejčastější postup je takový, že zvolíte "maximální model", 
+což může být model, který jste vybral Vy, nebo model, který navíc obsahuje i některé interakce (pokud není určeno jinak, uvažují se pouze dvojné interakce, kde alespoň jedna z proměnných je kategorická), a na tento model se použije kroková regrese (v R-ku funkce step). 
+Základní nastavení R-ka je, že kroková regrese hledá optimální model vzhledem k Akaikeho kritériu. Toto nastavení můžete změnit, nebo můžete výsledný model z funkce step ještě dále upravit. Až pro optimální model se pak plní další úkoly.
+
+V prvním příkladu tedy interpretujte koeficienty, testujte předpoklady a počítejte predikci až pro optimální model. A až budete testovat předpoklady, tak když Vám vyjde p-hodnota menší než 0.05, znamená to, že předpoklad není splněn. Mimochodem, víte, co máte dělat, 
+když rozhodnete, že zásadním způsobem není splněna normalita nebo stabilita rozptylu? Nemusíte to dělat, jen napište, jaký by měl být postup.
+
+Ve druhém příkladu také nejprve najděte optimální model, a až pro něj porovnávejte situaci s a bez X.nvk11. Porovnání udělejte, prosím, také pomocí Nagelkerkeho obdoby koeficientu determinace. Co se šancí na vitální kapacitu nad sto procent týče, 
+tak pokud Vám podíl šancí vyjde menší než 1, tak se z něj většinou spočítá převrácená hodnota (1/OR) a interpretuje se ta. Tedy ne, kolik procent z šancí pro plavání má atletika, ale interpretuje se kolikrát větší šanci mají plavci v porovnání s atlety.
+Úkol, prosím, opravte.
+
+
+S pozdravem
+Alena Černíková

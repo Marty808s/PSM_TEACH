@@ -1,0 +1,6 @@
+Druhý úkol na pokročilé statistické metody (PSM) - regrese
+
+1. V datech Deti.RData najděte optimální model závislosti vitální kapacity plic dvanáctiletých dětí (proměnná X.nvk12 - měřená v procentech) na jejich pohlaví, na sportu, který dělají, na váze, výšce, BMI, systolickém a diastolickém tlaku ve dvanácti letech a na vitální kapacitě plic v jedenácti letech (proměnné pohlavi, sport, hmot12, vyska12, bmi12, syst12, diast12 a X.nvk11). Napište odhadnutý model, interpretujte jeden vybraný regresní koeficient (ne absolutní člen), ohodnoťte kvalitu modelu, zkontrolujte splnění předpokladů. Odhadněte, jakou vitální kapacitu by měl mít ve dvanácti letech kluk, který dělá atletiku, váží 40 kg, měří 160 cm a v jedenácti letech měl vitální kapacitu 100%. Pokud bude potřeba, uvažujte u něj průměrný tlak. 
+
+2. Vytvořte dvouhodnotovou proměnnou, která bude nabývat hodnoty 1 pro děti, co mají ve 12 letech vitální kapacitu větší než 100%, a 0 jinak. Opět najděte optimální model ze stejných nezávisle proměnných jako výše. Porovnejte kvalitu modelu s a bez nezávisle proměnné vitální kapacita plic v jedenácti letech. Porovnejte šance na vitální kapacitu plic ve dvanácti letech větší než 100% u těch, co dělají atletiku a u těch, co dělají plavání.
+

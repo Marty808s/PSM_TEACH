@@ -1,0 +1,7 @@
+Odevzdavejte idealne do 5.4.2024
+
+1. V datech nlschools z knihovny MASS rozhodnete, zda vysledky jazykovych testu zavisi na socioekonomickem statusu. Vysledek jazykoveho testu najdete v promenne lang, socioekonomicky status v promenne SES. U socioekonomickeho statusu porovnavejte pouze 5 skupin vytvorenych podle pocatecni cislice promenne SES. Ohodnotte jak statistickou, tak vecnou vyznamnost, a to nejen celkove pro promennou SES, ale i pro rozdily vsech dvojic socioekonomickych statusu.
+
+2. Pokuste se cerealni vyrobky hodnocene v datovem sobouru UScereal v knihovne MASS rozdelit do skupin podle meritelnych parametru. Vyzkousejte vice deleni a vyberte to, ktere Vam prijde optimalni.
+
+3. Vysledky ciselnych testu namerenych v datovem souboru UScereals znazornete vhodnym grafem. K jeho vykresleni vyuzijte faktorovou analyzu, pripadne hlavni komponenty, pokud vhodne faktory nebude mozno vytvorit.

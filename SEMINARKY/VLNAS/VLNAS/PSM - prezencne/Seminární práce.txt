@@ -1,0 +1,32 @@
+Zadání seminární práce z pokročilých statistických metod
+
+Ředitel banky si u Vás objednal analýzu výsledků dotazníkového šetření realizovaného na skupině zákazníků banky. Jeho dotaz zní: jak bych měl navýšit zisk banky?
+
+Vaším úkolem je vymyslet svou vlastní optimální strategii působení na zákazníky tak, aby se vylepšil jejich vztah k bance. Vyberte si na to jednu z probíraných metod a aplikujte ji na vybrané proměnné v datech. Není nutné použít všechny proměnné!
+Možné přístupy: 
+i) Mezi marketéry velkých firem se klade zásadní důraz na následující tři proměnné: celková spokojenost, ochota firmu doporučit, víra že u firmy vydržím. Můžete se zaměřit na některou z těchto proměnných, nebo na jejich kombinaci (např. pomocí váženého průměru) a hledat regresní optimální model,
+ na čem tato proměnná závisí. Následně pak vyhodnotíte, na které faktory by se banka měla zaměřit především.
+ii) Využijete stejnou myšlenku jako v bodě i), ale nebudete pracovat se všemi hodnotami závisle proměnné, ale uděláte si jen dvouhodnotovou proměnnou (např. odchod od banky: ano x ne) a budete hledat rizikové faktory pro odchod klientů od banky pomocí logistické regrese.
+iii) Určíte si několik málo skupin zákazníků, kteří Vás budou zajímat (např.: je nespokojen a chce odejít; je spokojen, nechce odejít, ale nedoporučí; je spokojen, nechce odejít a doporučuje; chce odejít, ale je spokojen, atd.) a pomocí diskriminační analýzy určíte pravidla, 
+podle nichž se pozná, že zákazník patří do některé z těchto skupin (ideálně na základě několika málo otázek) a podle toho se na něj bankéř zaměří.
+iv) Pomocí shlukové analýzy rozdělíte záakazníky do skupin a u každé určíte, jak k ní přistupovat.
+v) Cokoliv jiného rozumného, co Vás napadne.
+
+Výsledkem by měla být cca půl až jedno stránková zpráva z výzkumu, kde stručně zmíníte statistický postup, který jste použili, popíšete výsledky a můžete přidat i nějaký zásadní graf. POZOR: ředitel banky je vytížený člověk, žádné dlouhé elaboráty Vám nebude číst!
+
+Popis dat SatData.RData
+
+5 skupin otazek:
+IMAG=Image, EXPE=Expectations, QUAL=Quality, VAL=Value, SAT=Satisfaction, LOY=Loyalty.
+
+imag1-imag5: Indicators attached to concept IMAG which is supposed to capture aspects such as the institutions reputation, trustworthiness, seriousness, solidness, and caring about customer.
+
+expe1-expe5: Indicators attached to concept EXPE which is supposed to capture aspects concerning products and services provided, customer service, providing solutions, and expectations for the overall quality.
+
+qual1-qual5: Indicators attached to concept QUAL which is supposed to capture aspects concerning reliability of products and services, the range of products and services, personal advice, and overall perceived quality.
+
+val1-val4: Indicators attached to concept VAL which is supposed to capture aspects related to beneficial services and products, valuable investments, quality relative to price, and price relative to quality.
+
+sat1-sat4: Indicators attached to concept SAT which is supposed to capture aspects concerning overall rating of satisfaction, fulfillment of expectations, satisfaction relative to other banks, and performance relative to customer’s ideal bank.
+
+loy1-loy4: Indicators attached to concept LOY which is supposed to capture aspects concerning propensity to choose the same bank again, propensity to switch to other bank, intention to recommend the bank to friends, and the sense of loyalty.
